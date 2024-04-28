@@ -33,7 +33,7 @@
   "scripts": {
     "dev": "vite",
     "test": "jest",
-    "build": "npm run clean && tsc && vite build",
+    "build": "npm run clean && tsc",
     "build:package": "npm run clean && tsc",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
