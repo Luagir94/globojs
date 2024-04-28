@@ -1,65 +1,43 @@
-name: "publish npm"
+name: Node.js CI
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
   pull_request:
-    branches:
-      - master
+    branches: ['*']
 
 jobs:
-    build:
-      defaults:
-        run:
-          working-directory: ./
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [20.x]
-      steps:
-        - uses: actions/checkout@v2
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
-        - run: npm i
-        - run: npm run test
-        - run: npm run build
-    package:
-        defaults:
-            run:
-                working-directory: ./
-        needs: [build]
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                node-version: ${{ matrix.node-version }}
-            - run: npm i
-            - run: npm run build
-            - run: npm version prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
-            - run: npm pack
-            - name: upload
-              uses: actions/upload-artifact@v2
-              with:
-                name: globojs
-                path: .//*.tgz
-    publish:
-        runs-on: ubuntu-latest
-        needs: [package]
-        steps:
-            - name: checkout
-              uses: actions/checkout@v2
-            - name: node
-              uses: actions/setup-node@v2
-              with:
-                  node-version: 20.x
-                  registry-url: https://registry.npmjs.org
-            - name: publish
-              run: npm publish --access public
-              working-directory: ./
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+  quality:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+        os: [ubuntu-latest, windows-latest]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm test
+  
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [quality]
+    steps: 
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run semantic-release
+      env: 
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
