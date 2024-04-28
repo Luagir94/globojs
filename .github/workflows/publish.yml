@@ -51,7 +51,7 @@ jobs:
         name: "publish"
         needs: [package]
         runs-on: ubuntu-latest
-        if: github.repository_owner == 'Luagir94'
+        if: github.repository_owner == 'luagir94'
         steps:
         - name: upload
           uses: actions/download-artifact@v2
