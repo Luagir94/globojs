@@ -2,4 +2,3 @@ pnpm lint
 
 pnpm test
 
-pnpm build-storybook
