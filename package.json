@@ -41,7 +41,7 @@
     "build-storybook": "npm run clean:docs && storybook build -o docs",
     "clean": "rimraf dist/",
     "clean:docs": "rimraf docs/",
-    "push:npm": "np --mesagge='Release v%s'",
+    "push:npm": "np",
     "prepare": "husky"
   },
   "devDependencies": {
