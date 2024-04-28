@@ -1,7 +1,7 @@
 {
   "name": "globojs",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "keywords": [
     "vite",
@@ -40,7 +40,7 @@
     "build-storybook": "npm run clean:docs && storybook build -o docs",
     "clean": "rimraf dist/",
     "clean:docs": "rimraf docs/",
-    "clean:components" : "rimraf dist/components",
+    "clean:components": "rimraf dist/components",
     "push:npm": "np",
     "prepare": "husky"
   },
