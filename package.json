@@ -13,7 +13,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "license": "MIT",
-  "homepage": "https://lucianogiraudi.com",
+  "homepage": "https://github.com/Luagir94/globojs",
   "repository": {
     "type": "git",
     "url": "https://github.com/Luagir94/globojs"
