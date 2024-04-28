@@ -26,3 +26,5 @@ storybook-static
 *.sw?
 
 coverage
+
+package-lock.json
