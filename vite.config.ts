@@ -16,6 +16,7 @@ export default defineConfig({
 			input: {
 				main: resolve(__dirname, './src/index.ts'),
 			},
+			external: ['react', 'react/jsx-runtime'],
 		},
 		minify: 'esbuild',
 		copyPublicDir: false,
