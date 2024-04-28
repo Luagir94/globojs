@@ -1,5 +1,6 @@
-import { renderHook, act } from '@testing-library/react'
+import { renderHook } from '@testing-library/react'
 import useSetTimeout from './'
+import { act } from 'react'
 
 describe('useSetTimeout', () => {
 	beforeEach(() => {
