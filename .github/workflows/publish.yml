@@ -1,0 +1,68 @@
+name: "publish npm"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+    build:
+      defaults:
+        run:
+          working-directory: packages/my-package
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]
+      steps:
+        - uses: actions/checkout@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: npm ci
+        - run: npm run test
+        - run: npm run build
+    package:
+        defaults:
+            run:
+                working-directory: packages/my-package
+        needs: [build]
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                node-version: ${{ matrix.node-version }}
+            - run: npm ci
+            - run: npm run build
+            - run: npm version prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
+            - run: npm pack
+            - name: upload
+              uses: actions/upload-artifact@v2
+              with:
+                name: globojs
+                path: packages/my-package/*.tgz
+    publish:
+        name: "publish"
+        needs: [package]
+        runs-on: ubuntu-latest
+        if: github.repository_owner == 'Luagir94'
+        steps:
+        - name: upload
+          uses: actions/download-artifact@v2
+          with:
+                name: globojs
+        - uses: actions/setup-node@v1
+          with:
+                node-version: 14.x
+                registry-url: https://registry.npmjs.org
+                scope: '@luagir94'
+        - run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > ~/.npmrc
+        - run: npm publish --access public $(ls *.tgz)
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
