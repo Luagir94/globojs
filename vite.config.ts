@@ -9,4 +9,20 @@ export default defineConfig({
 	resolve: {
 		alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
 	},
+	build: {
+		outDir: 'dist',
+		emptyOutDir: false,
+		rollupOptions: {
+			input: {
+				main: resolve(__dirname, './src/index.ts'),
+			},
+		},
+		minify: 'esbuild',
+		copyPublicDir: false,
+		lib: {
+			entry: resolve(__dirname, './src/index.ts'),
+			formats: ['es'],
+			fileName: 'index',
+		},
+	},
 })

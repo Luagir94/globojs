@@ -43,6 +43,7 @@
     "src/*.stories.tsx",
     "**/*.stories.tsx",
     "**/*.spec.tsx",
+    "./src/components"
   ],
   
 
