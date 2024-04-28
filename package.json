@@ -1,7 +1,7 @@
 {
   "name": "globojs",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "keywords": [
     "vite",
@@ -10,8 +10,8 @@
     "tailwindcss",
     "storybook"
   ],
-  "main": "dist/main.js",
-  "typings": "dist/main.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "license": "MIT",
   "homepage": "https://lucianogiraudi.com",
   "repository": {
