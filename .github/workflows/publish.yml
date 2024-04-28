@@ -62,8 +62,10 @@ jobs:
                 node-version: 20.x
                 registry-url: https://npm.pkg.github.com
                 scope: '@luagir94'
-        - run: npm install -g npm
         - run: echo "// https://npm.pkg.github.com/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
+        - run: echo "_auth=${{secrets.NPM_PUBLISH_KEY}}" >> ~/.npmrc
+        - run: echo "email=${{secrets.EMAIL}}" >> ~/.npmrc
+        - run: echo "always-auth=true" >> ~/.npmrc
         - run: echo "${{secrets.NPM_AUTH_TOKEN}}" | npm login --registry=https://npm.pkg.github.com --scope=@luagir94 --always-auth
         - run: npm set "//npm.pkg.github.com/:_authToken=${{secrets.NPM_AUTH_TOKEN}}"
         - run: npm publish --access public $(ls *.tgz)
