@@ -1,0 +1,71 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useCounter  from './index.stories';
+
+
+<Meta of={useCounter} />
+
+
+
+
+# useCounter
+
+## This hook allows you to create a counter with increment, decrement, reset, and set value functions.
+
+
+
+
+
+### Example :
+
+```tsx
+	const { value, increment, decrement, reset, setValue } = useCounter(
+		args.initialValue
+	)
+	return (
+		<div className="flex items-center gap-4">
+			<Button onClick={() => reset()} className="w-20 font-bold">
+				Reset
+			</Button>
+			<Button onClick={() => decrement()} className="w-10 font-bold">
+				-1
+			</Button>
+			<p className="w-4 font-bold text-center">{value}</p>
+			<Button onClick={() => increment()} className="w-10 font-bold">
+				+1
+			</Button>
+			<Button onClick={() => setValue(73)} className="w-20 font-bold">
+				Set 73
+			</Button>
+		</div>
+	)
+```
+
+## Also you can set Attr "hasNegatives" to true to allow negative values. 
+
+```tsx
+	const { value, increment, decrement, reset, setValue } = useCounter(
+		args.initialValue,
+		true
+	)
+	return (
+		<div className="flex items-center gap-4">
+			<Button onClick={() => reset()} className="w-20 font-bold">
+				Reset
+			</Button>
+			<Button onClick={() => decrement()} className="w-10 font-bold">
+				-1
+			</Button>
+			<p className="w-4 font-bold text-center">{value}</p>
+			<Button onClick={() => increment()} className="w-10 font-bold">
+				+1
+			</Button>
+			<Button onClick={() => setValue(73)} className="w-20 font-bold">
+				Set 73
+			</Button>
+		</div>
+	)
+```
+<Canvas of={useCounter.Example} />
+<Controls/>
+

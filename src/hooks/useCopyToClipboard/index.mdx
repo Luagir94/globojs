@@ -1,0 +1,34 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useCopyToClipboard  from './index.stories';
+
+
+<Meta of={useCopyToClipboard} />
+
+
+
+
+# useCopyToClipboard
+
+## This hook allows you to copy text to the clipboard.
+
+
+
+```tsx
+	const { copy } = useCopyToClipboard()
+	const handleCopy = () => {
+		copy('Globo🎈')
+		alert('Copied to clipboard!')
+	}
+
+	return (
+		<Button onClick={handleCopy} className="font-bold">
+			{' '}
+			Copy Globo🎈
+		</Button>
+	)
+```
+<Canvas of={useCopyToClipboard.Example} />
+
+<Controls/>
+

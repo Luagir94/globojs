@@ -1,0 +1,1 @@
+import{j as p}from"./jsx-runtime-DRTy3Uxn.js";import{r as d}from"./index-BBkUAzwr.js";const e=d.forwardRef(({className:r="",...o},t)=>p.jsx("input",{ref:t,...o,className:" text-red-600 border-red-600 border-2 border-solid rounded p-2 h-10 "+(r?` ${r}`:" w-32")}));try{e.displayName="Input",e.__docgenInfo={description:"",displayName:"Input",props:{}}}catch{}export{e as I};

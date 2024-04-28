@@ -1,0 +1,30 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useHover  from './index.stories';
+
+
+<Meta of={useHover} />
+
+
+
+
+# useHover
+
+This hook allows you to detect when the mouse is hovering over an element.
+
+### Example :
+
+```tsx
+	const ref = useRef<HTMLButtonElement>(null)
+	const isHovered = useHover(ref)
+	return (
+		<Button ref={ref} className="w-40 font-bold">
+			{isHovered ? "It's hovered🎈" : 'Hover!'}
+		</Button>
+	)
+```
+
+
+<Canvas of={useHover.Example} />
+<Controls/>
+

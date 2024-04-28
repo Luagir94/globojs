@@ -1,0 +1,46 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Installation" parameters={{ viewMode: 'docs' }}  />
+
+# Installation
+
+To install the package, run:
+
+```bash
+npm install globojs
+```
+
+```bash
+yarn add globojs
+```
+
+```bash
+pnpm add globojs
+```
+
+```bash
+bun add globojs
+```
+
+
+## Usage
+
+To use the package, import the package and use the hooks:
+
+```jsx
+
+import { useClickOutside } from 'globojs';
+
+function App() {
+  const ref = useRef();
+  useClickOutside(ref, () => {
+    console.log('Clicked outside');
+  });
+
+  return <div ref={ref}>Click outside me</div>;
+}
+```
+
+## Documentation
+
+For more information, check out the [documentation](https://github.com/Luagir94/globojs).

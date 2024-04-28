@@ -1,0 +1,42 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useClickOutside  from './index.stories';
+
+
+<Meta of={useClickOutside} />
+
+
+
+
+# useClickOutside
+
+## This hook allows you to detect clicks outside of a specified element.
+
+
+
+
+### Example :
+
+```tsx
+	const ref = useRef<HTMLButtonElement>(null)
+	const [clicksOutside, setClicksOutside] = useState(0)
+	const callback = () => {
+		setClicksOutside(prev => prev + 1)
+	}
+	useClickOutside(ref, callback)
+	return (
+		<>
+			<Button ref={ref} className="font-bold">
+				Click outside!
+			</Button>
+
+			<p>Clicks outside: {clicksOutside}</p>
+		</>
+	)
+```
+<Canvas of={useClickOutside.Example} preview
+
+/>
+<Controls/>
+
+

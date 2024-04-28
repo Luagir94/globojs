@@ -1,0 +1,25 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useSetTimeout  from './index.stories';
+
+
+<Meta of={useSetTimeout} />
+
+
+
+
+# useSetTimeout
+
+This hook allows you to set a timeout and get a boolean value when the timeout is done.
+
+### Example :
+
+```tsx
+	const isDone = useSetTimeout(args.miliseconds, args.callback)
+	return <Button>{isDone ? 'Done' : 'Not done'}</Button>
+```
+
+
+<Canvas of={useSetTimeout.Example} />
+<Controls/>
+

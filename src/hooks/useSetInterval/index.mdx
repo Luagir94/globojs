@@ -1,0 +1,28 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useSetInterval  from './index.stories';
+
+
+<Meta of={useSetInterval} />
+
+
+
+
+# useSetInterval
+
+This hook allows you to set an interval and get the number of cicles that have passed.
+
+### Example :
+
+```tsx
+	const cicles = useSetInterval(args.miliseconds, args.callback)
+
+	return (
+			<Button className="font-bold">Cicles: {cicles}</Button>
+	)
+```
+
+
+<Canvas of={useSetInterval.Example} />
+<Controls/>
+

@@ -1,0 +1,50 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useDebounce  from './index.stories';
+
+
+<Meta of={useDebounce} />
+
+
+
+
+# useDebounce
+
+This hook allows you to debounce a value.
+
+### Example :
+
+```tsx
+	const [text, setText] = useState<string>('Globo')
+	const debouncedValue = useDebounce(text, args.miliseconds)
+	return (
+		<div className="flex flex-col items-center gap-4">
+			<label htmlFor="debounceInput" className="flex flex-col gap-2 font-bold">
+				Input:
+				<Input
+					id="debounceInput"
+					type="text"
+					className="w-32 h-10 p-2 font-normal border-2 border-red-600 border-solid rounded"
+					value={text}
+					onChange={e => setText(e.target.value)}
+				/>
+			</label>
+			<label
+				htmlFor="debounceOutput"
+				className="flex flex-col gap-2 font-bold "
+			>
+				Output:
+				<Input
+					type="text"
+					className="w-32 h-10 p-2 font-normal border-2 border-red-600 border-solid rounded"
+					value={debouncedValue}
+				/>
+			</label>
+		</div>
+	)
+```
+
+
+<Canvas of={useDebounce.Example} />
+<Controls/>
+

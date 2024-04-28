@@ -1,0 +1,46 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as  useSessionStorage  from './index.stories';
+
+
+<Meta of={useSessionStorage} />
+
+
+
+
+# useSessionStorage
+
+This hook allows you to set a value in the SessionStorage and get it.
+
+### Example :
+
+```tsx
+	const [value, setValue] = useState('')
+	const [ssValue, setSsValue] = useSessionStorage('key', 'value')
+	const handleStorage = (value: string) => {
+		setValue(value)
+		setSsValue(value)
+	}
+
+	return (
+		<div className="flex flex-col items-center gap-4">
+			<label htmlFor="debounceInput" className="flex flex-col gap-2 font-bold">
+				Input:
+				<Input
+					id="debounceInput"
+					type="text"
+					className="w-32 h-10 p-2 font-normal border-2 border-red-600 border-solid rounded"
+					value={value}
+					onChange={e => handleStorage(e.target.value)}
+				/>
+			</label>
+			<p>{ssValue}</p>
+			<p>Check SessionStorage!</p>
+		</div>
+	)
+```
+
+
+<Canvas of={useSessionStorage.Example} />
+<Controls/>
+
