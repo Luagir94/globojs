@@ -63,6 +63,7 @@ jobs:
                 registry-url: https://npm.pkg.github.com
                 scope: '@luagir94'
         - run: echo "// https://npm.pkg.github.com/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
+        - run: echo "${{secrets.NPM_AUTH_TOKEN}}" | npm login --registry=https://npm.pkg.github.com --scope=@luagir94 --always-auth
         - run: npm publish --access public $(ls *.tgz)
           env:
             NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
