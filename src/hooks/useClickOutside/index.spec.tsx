@@ -1,12 +1,12 @@
 import { render, fireEvent } from '@testing-library/react'
-import React,{ useRef } from 'react'
+import React from 'react'
 import useClickOutside from './'
 
 describe('useClickOutside', () => {
 	test('callback is called when clicking outside the ref element', () => {
 		const callback = jest.fn()
 		const Component = () => {
-			const ref = useRef(null)
+			const ref = React.useRef(null)
 			useClickOutside(ref, callback)
 
 			return (
@@ -28,7 +28,7 @@ describe('useClickOutside', () => {
 	test('callback is not called when clicking inside the ref element', () => {
 		const callback = jest.fn()
 		const Component = () => {
-			const ref = useRef(null)
+			const ref = React.useRef(null)
 			useClickOutside(ref, callback)
 
 			return (
