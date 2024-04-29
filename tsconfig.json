@@ -39,9 +39,12 @@
     "node_modules",
     "src/*.spec.ts",
     "src/*.spec.tsx",
+    "src/hooks/**/*.spec.tsx",
+    "src/hooks/**/*.spec.ts",
     "src/*.stories.ts",
     "src/*.stories.tsx",
     "**/*.stories.tsx",
+    "**/*.mdx",
     "**/*.spec.tsx",
     "./src/components"
   ],
