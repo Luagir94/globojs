@@ -1,12 +1,14 @@
 
-# Welcome to
 
-<img src='./public/imagotipos/imagotipo1bg.png' />
+
+# GloboJS
+
+![globojslogo](./public/imagotipos/imagotipo1bg.png)
 
 Momentarily, this is a React Hooks library that provides a set of hooks to help you build your React applications. Opportunely this library
 can migrate to a full-fledged UI with ooks library in the future. It's a work in progress, and we are working hard to make it better every day.
 
-# Installation
+## Installation
 
 To install the package, run:
 
@@ -46,7 +48,7 @@ function App() {
 
 ## Changelog
 
-See the [Changelog](/docs/changelog--docs) to see the latest changes.
+See the [Changelog](https://github.com/Luagir94/globojs/releases) to see the latest changes.
 
 ## The creator
 
