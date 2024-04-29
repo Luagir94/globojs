@@ -16,7 +16,7 @@
   "homepage": "https://github.com/Luagir94/globojs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Luagir94/globojs.git"
+    "url": "https://github.com/Luagir94/globojs"
   },
   "files": [
     "dist/"
