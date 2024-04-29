@@ -9,6 +9,7 @@ import useSetTimeout from './hooks/useSetTimeout'
 import useLocalStorage from './hooks/useLocalStorage'
 import useSessionStorage from './hooks/useSessionStorage'
 import useScreenSize from './hooks/useScreenSize'
+import useToggle from './hooks/useToggle';
 
 export {
 	useClickOutside,
@@ -22,4 +23,5 @@ export {
 	useScreenSize,
 	useLocalStorage,
 	useSessionStorage,
+	useToggle
 }
