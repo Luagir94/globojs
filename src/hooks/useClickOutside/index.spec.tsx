@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react'
-import { useRef } from 'react'
+import React,{ useRef } from 'react'
 import useClickOutside from './'
 
 describe('useClickOutside', () => {

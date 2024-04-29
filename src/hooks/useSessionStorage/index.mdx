@@ -42,5 +42,77 @@ This hook allows you to set a value in the SessionStorage and get it.
 
 
 <Canvas of={useSessionStorage.Example} />
-<Controls/>
 
+
+## **API**
+
+▸ **useSessionStorage** (`key`, `initialValue`): *string*
+
+This hook allows you to set a value in the SessionStorage and get it.
+
+**Parameters:**
+
+<table>
+
+<thead>
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td> key </td>
+<td> `string` </td>
+<td> The key to store the value in the SessionStorage. </td>
+</tr>
+
+<tr>
+<td> initialValue </td>
+<td> `string` </td>
+<td> The initial value of the SessionStorage. </td>
+</tr>
+
+
+</tbody>
+
+</table>
+
+
+
+**Returns:**
+
+
+<table>
+
+<thead>
+
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+<td> ssValue </td>
+<td> `string` </td>
+<td> The value stored in the SessionStorage. </td>
+</tr>
+
+<tr>
+<td> setSsValue </td>
+<td> `function` </td>
+<td> A function that sets the value in the SessionStorage. </td>
+</tr>
+
+</tbody>
+
+
+</table>
+
+<Controls/>

@@ -66,6 +66,85 @@ import * as  useCounter  from './index.stories';
 		</div>
 	)
 ```
+
+
+
 <Canvas of={useCounter.Example} />
+## API 
+
+▸ **useCounter** (`initialValue`, `hasNegatives`): `{ value: number, increment: function, decrement: function, reset: function, setValue: function }`
+
+This hook allows you to create a counter with increment, decrement, reset, and set value functions.
+
+**Parameters:**
+
+<table>
+
+<thead>
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> initialValue </td>
+<td> `number` </td>
+<td> The initial value of the counter. </td>
+</tr>
+<tr>
+<td> hasNegatives </td>
+<td> `boolean` </td>
+<td> If true, allows negative values. </td>
+</tr>
+</tbody>
+
+
+</table>
+
+
+**Returns:**
+
+<table>
+
+<thead>
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> value </td>
+<td> `number` </td>
+<td> The current value of the counter. </td>
+</tr>
+<tr>
+<td> increment </td>
+<td> `function` </td>
+<td> A function that increments the counter by 1. </td>
+</tr>
+<tr>
+<td> decrement </td>
+<td> `function` </td>
+<td> A function that decrements the counter by 1. </td>
+</tr>
+<tr>
+<td> reset </td>
+<td> `function` </td>
+<td> A function that resets the counter to its initial value. </td>
+</tr>
+<tr>
+<td> setValue </td>
+<td> `function` </td>
+<td> A function that sets the counter to a specified value. </td>
+</tr>
+</tbody>
+
+</table>
+
+
 <Controls/>
 

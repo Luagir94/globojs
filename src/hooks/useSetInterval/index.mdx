@@ -24,5 +24,70 @@ This hook allows you to set an interval and get the number of cicles that have p
 
 
 <Canvas of={useSetInterval.Example} />
-<Controls/>
 
+## **API**
+
+▸ **useSetInterval**  (`miliseconds`, `callback`): *number*
+
+This hook allows you to set an interval and get the number of cicles that have passed.
+
+**Parameters:**
+
+<table>
+
+<thead>
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td> miliseconds </td>
+<td> `number` </td>
+<td> The time in miliseconds that the interval will last. </td>
+</tr>
+<tr>
+<td> callback </td>
+<td> `function` </td>
+<td> The function that will be called every interval. </td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+**Returns:**
+
+
+<table>
+
+<thead>
+
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+<td> default </td>
+<td> `number` </td>
+<td>  
+The number of cicles that have passed.
+</td>
+</tr>
+</tbody>
+
+
+</table>
+
+
+<Controls/>

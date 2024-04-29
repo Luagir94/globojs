@@ -43,7 +43,8 @@
     "clean:docs": "rimraf docs/",
     "push:npm": "np",
     "prepare": "husky",
-    "semantic-release": "semantic-release --branches master"
+    "semantic-release": "semantic-release --branches master",
+    "deploy": "gh-pages -d docs"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.0.9",

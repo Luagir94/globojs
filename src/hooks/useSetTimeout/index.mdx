@@ -21,5 +21,71 @@ This hook allows you to set a timeout and get a boolean value when the timeout i
 
 
 <Canvas of={useSetTimeout.Example} />
-<Controls/>
 
+## **API**
+
+▸ **useSetTimeout**  (`miliseconds`, `callback`): *boolean*
+
+This hook allows you to set a timeout and get a boolean value when the timeout is done.
+
+**Parameters:**
+
+<table>
+
+<thead>
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td> miliseconds </td>
+<td> `number` </td>
+<td> The time in miliseconds that the timeout will last. </td>
+</tr>
+
+<tr>
+<td> callback </td>
+<td> `function` </td>
+<td> The function that will be called when the timeout is done. </td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+**Returns:**
+
+
+<table>
+
+<thead>
+
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description </th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+<td> default </td>
+<td> `boolean` </td>
+<td> 
+The boolean value that indicates if the timeout is done.
+</td>
+</tr>
+</tbody>
+
+
+</table>
+
+
+<Controls/>

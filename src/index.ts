@@ -8,6 +8,7 @@ import useSetInterval from './hooks/useSetInterval'
 import useSetTimeout from './hooks/useSetTimeout'
 import useLocalStorage from './hooks/useLocalStorage'
 import useSessionStorage from './hooks/useSessionStorage'
+import useScreenSize from './hooks/useScreenSize'
 
 export {
 	useClickOutside,
@@ -18,6 +19,7 @@ export {
 	useHover,
 	useSetInterval,
 	useSetTimeout,
+	useScreenSize,
 	useLocalStorage,
 	useSessionStorage,
 }
