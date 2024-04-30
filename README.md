@@ -46,6 +46,14 @@ function App() {
 }
 ```
 
+## Demo
+
+See the [Demo](https://luagir94.github.io/globojs/)
+
+## Repository
+
+See the [Repository](https://github.com/Luagir94/globojs) to see the source code.
+
 ## Changelog
 
 See the [Changelog](https://github.com/Luagir94/globojs/releases) to see the latest changes.
