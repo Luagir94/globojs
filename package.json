@@ -40,7 +40,7 @@
     "build-storybook": "npm run clean:docs && storybook build",
     "commit": "git-cz",
     "clean": "rimraf dist/",
-    "clean:docs": "rimraf storybook build/",
+    "clean:docs": "rimraf storybook-static/",
     "push:npm": "np",
     "prepare": "husky"
   },

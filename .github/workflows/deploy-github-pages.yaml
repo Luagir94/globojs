@@ -33,3 +33,4 @@ jobs:
           build_command: npm run build-storybook # default: npm run build-storybook
           path: storybook-static # default: dist/storybook
           checkout: false # default: true
+          token: ${{ secrets.GH_TOKEN }}
