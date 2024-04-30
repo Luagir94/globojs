@@ -3,7 +3,7 @@ import { create } from '@storybook/theming/create'
 export default create({
 	base: 'light',
 	brandTitle: 'Globo Js',
-	brandUrl: '/?path=/docs/introduction--docs',
+	brandUrl: 'https://luagir94.github.io/globojs/',
 	brandImage: 'imagotipos/imagotipo1.svg',
 	brandTarget: '_self',
 	//Theme colors

@@ -37,14 +37,12 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "npm run clean:docs && storybook build -o docs",
+    "build-storybook": "npm run clean:docs && storybook build",
     "commit": "git-cz",
     "clean": "rimraf dist/",
-    "clean:docs": "rimraf docs/",
+    "clean:docs": "rimraf storybook build/",
     "push:npm": "np",
-    "prepare": "husky",
-    "semantic-release": "semantic-release --branches master",
-    "deploy": "gh-pages -d docs"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.0.9",
@@ -104,5 +102,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@storybook/addon-viewport": "^8.0.9"
   }
 }
