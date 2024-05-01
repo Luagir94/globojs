@@ -1,65 +1,42 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useCopyToClipboard  from './index.stories';
-
+import * as useCopyToClipboard from './index.stories'
+import { returns } from './data'
+import Table from '@/components/Table'
 
 <Meta of={useCopyToClipboard} />
-
-
-
 
 # useCopyToClipboard
 
 ## This hook allows you to copy text to the clipboard.
 
-
-
 ```tsx
-	const { copy } = useCopyToClipboard()
-	const handleCopy = () => {
-		copy('Globo🎈')
-		alert('Copied to clipboard!')
-	}
+const { copy } = useCopyToClipboard()
+const handleCopy = () => {
+	copy('Globo🎈')
+	alert('Copied to clipboard!')
+}
 
-	return (
-		<Button onClick={handleCopy} className="font-bold">
-			{' '}
-			Copy Globo🎈
-		</Button>
-	)
+return (
+	<Button onClick={handleCopy} className="font-bold">
+		{' '}
+		Copy Globo🎈
+	</Button>
+)
 ```
-<Canvas of={useCopyToClipboard.Example} />
-
 
 ## **API**
 
-▸ **useCopyToClipboard** (   ): `*{ copy:function}*`
+▸ **useCopyToClipboard** ( ): `*{ copy:function}*`
 
 This hook allows you to copy text to the clipboard.
 
-**Returns:** 
-
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td> copy </td>
-<td> `function` </td>
-<td> A function that takes a string and copies it to the clipboard. </td>
-</tr>
-</tbody>
+**Returns:**
 
 
-</table>
- 
 
-<Controls/>
+<Table headers={returns.headers} data={returns.data} />
 
+
+
+<Canvas of={useCopyToClipboard.Example} />

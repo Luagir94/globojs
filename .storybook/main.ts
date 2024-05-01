@@ -21,6 +21,7 @@ const config: StorybookConfig = {
 	core: {
 		builder: '@storybook/builder-vite',
 	},
+	
 	async viteFinal(config) {
 		return {
 			...config,

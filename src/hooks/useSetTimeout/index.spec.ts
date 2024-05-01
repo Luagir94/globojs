@@ -4,7 +4,9 @@ import { act } from 'react'
 
 describe('useSetTimeout', () => {
 	beforeEach(() => {
-		jest.useFakeTimers()
+		jest.useFakeTimers({
+			legacyFakeTimers: true,
+		})
 	})
 
 	afterEach(() => {
@@ -29,13 +31,13 @@ describe('useSetTimeout', () => {
 		const callback = jest.fn()
 		const { result } = renderHook(() => useSetTimeout(1000, callback))
 
-		expect(result.current).toBe(false)
+		expect(result.current.isDone).toBe(false)
 
 		act(() => {
 			jest.advanceTimersByTime(1000)
 		})
 
-		expect(result.current).toBe(true)
+		expect(result.current.isDone).toBe(true)
 	})
 
 	test('should clear timeout on unmount', () => {
@@ -47,6 +49,21 @@ describe('useSetTimeout', () => {
 		expect(clearTimeoutSpy).not.toHaveBeenCalled()
 
 		unmount()
+
+		expect(clearTimeoutSpy).toHaveBeenCalledTimes(1)
+	})
+
+	test('should clear timeout on clear', () => {
+		const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
+
+		const callback = jest.fn()
+		const { result } = renderHook(() => useSetTimeout(1000, callback))
+
+		expect(clearTimeoutSpy).not.toHaveBeenCalled()
+
+		act(() => {
+			result.current.clear()
+		})
 
 		expect(clearTimeoutSpy).toHaveBeenCalledTimes(1)
 	})

@@ -5,7 +5,9 @@ on:
   # Event for the workflow to run on
   push:
     branches:
-      - 'master' # Replace with the branch you want to deploy from
+      - 'master'
+  pull_request:
+    branches: ['*']
 
 permissions:
   contents: read

@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react'
 
+/**
+ * Custom hook that returns the current screen size.
+ * @returns An object containing the width and height of the screen.
+ */
 const useScreenSize = () => {
     const [screenSize, setScreenSize] = useState({
         width: typeof window !== 'undefined' ? window.innerWidth : 0,

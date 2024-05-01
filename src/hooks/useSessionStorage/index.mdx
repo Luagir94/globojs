@@ -1,12 +1,11 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useSessionStorage  from './index.stories';
+import { parameters, returns } from './data'
 
+import Table from '@/components/Table'
+import * as useSessionStorage from './index.stories'
 
 <Meta of={useSessionStorage} />
-
-
-
 
 # useSessionStorage
 
@@ -15,104 +14,45 @@ This hook allows you to set a value in the SessionStorage and get it.
 ### Example :
 
 ```tsx
-	const [value, setValue] = useState('')
-	const [ssValue, setSsValue] = useSessionStorage('key', 'value')
-	const handleStorage = (value: string) => {
-		setValue(value)
-		setSsValue(value)
-	}
+const [value, setValue] = useState('')
+const [ssValue, setSsValue] = useSessionStorage('key', 'value')
+const handleStorage = (value: string) => {
+	setValue(value)
+	setSsValue(value)
+}
 
-	return (
-		<div className="flex flex-col items-center gap-4">
-			<label htmlFor="debounceInput" className="flex flex-col gap-2 font-bold">
-				Input:
-				<Input
-					id="debounceInput"
-					type="text"
-					className="w-32 h-10 p-2 font-normal border-2 border-red-600 border-solid rounded"
-					value={value}
-					onChange={e => handleStorage(e.target.value)}
-				/>
-			</label>
-			<p>{ssValue}</p>
-			<p>Check SessionStorage!</p>
-		</div>
-	)
+return (
+	<div className="flex flex-col items-center gap-4">
+		<label htmlFor="debounceInput" className="flex flex-col gap-2 font-bold">
+			Input:
+			<Input
+				id="debounceInput"
+				type="text"
+				className="w-32 h-10 p-2 font-normal border-2 border-red-600 border-solid rounded"
+				value={value}
+				onChange={e => handleStorage(e.target.value)}
+			/>
+		</label>
+		<p>{ssValue}</p>
+		<p>Check SessionStorage!</p>
+	</div>
+)
 ```
-
-
-<Canvas of={useSessionStorage.Example} />
-
 
 ## **API**
 
-▸ **useSessionStorage** (`key`, `initialValue`): *string*
+▸ **useSessionStorage** (`key`, `initialValue`): _string_
 
 This hook allows you to set a value in the SessionStorage and get it.
 
 **Parameters:**
 
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td> key </td>
-<td> `string` </td>
-<td> The key to store the value in the SessionStorage. </td>
-</tr>
-
-<tr>
-<td> initialValue </td>
-<td> `string` </td>
-<td> The initial value of the SessionStorage. </td>
-</tr>
-
-
-</tbody>
-
-</table>
-
-
+<Table headers={parameters.headers} data={parameters.data} />
 
 **Returns:**
 
+<Table headers={returns.headers} data={returns.data} />
 
-<table>
+<Canvas of={useSessionStorage.Example} />
 
-<thead>
-
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-
-<tbody>
-<tr>
-<td> ssValue </td>
-<td> `string` </td>
-<td> The value stored in the SessionStorage. </td>
-</tr>
-
-<tr>
-<td> setSsValue </td>
-<td> `function` </td>
-<td> A function that sets the value in the SessionStorage. </td>
-</tr>
-
-</tbody>
-
-
-</table>
-
-<Controls/>
+<Controls />
