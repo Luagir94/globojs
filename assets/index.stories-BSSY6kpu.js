@@ -1,6 +1,0 @@
-import{j as s}from"./jsx-runtime-QvZ8i92b.js";import{r as f}from"./index-uubelm5h.js";import{B as a}from"./index-D6si0Ahr.js";const x=(n=0,c=!1)=>{const[o,e]=f.useState(n);return{value:o,increment:(t=1)=>{e(l=>l+t)},decrement:(t=1)=>{!c&&o-t<0||e(l=>l-t)},reset:()=>{e(n)},setValue:t=>{e(t)}}},j=n=>{const{value:c,increment:o,decrement:e,reset:i,setValue:m}=x(n.initialValue,n.hasNegatives);return s.jsxs("div",{className:"flex items-center gap-4",children:[s.jsx(a,{onClick:()=>i(),className:"w-20 font-bold",children:"Reset"}),s.jsx(a,{onClick:()=>e(),className:"w-10 font-bold",children:"-1"}),s.jsx("p",{className:"w-4 font-bold text-center",children:c}),s.jsx(a,{onClick:()=>o(),className:"w-10 font-bold",children:"+1"}),s.jsx(a,{onClick:()=>m(73),className:"w-20 font-bold",children:"Set 73"})]})},h={title:"Hooks/useCounter",component:j,parameters:{layout:"centered"}},r={args:{initialValue:0,hasNegatives:!1}};var u,d,p;r.parameters={...r.parameters,docs:{...(u=r.parameters)==null?void 0:u.docs,source:{originalSource:`{
-  args: {
-    initialValue: 0,
-    hasNegatives: false
-  }
-}`,...(p=(d=r.parameters)==null?void 0:d.docs)==null?void 0:p.source}}};const N=["Example"],E=Object.freeze(Object.defineProperty({__proto__:null,Example:r,__namedExportsOrder:N,default:h},Symbol.toStringTag,{value:"Module"}));export{r as E,E as u};
