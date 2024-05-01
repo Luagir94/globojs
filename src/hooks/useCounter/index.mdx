@@ -1,76 +1,69 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useCounter  from './index.stories';
+import * as useCounter from './index.stories'
 
+import { parameters, returns } from './data'
+
+import Table from '@/components/Table'
 
 <Meta of={useCounter} />
-
-
-
 
 # useCounter
 
 ## This hook allows you to create a counter with increment, decrement, reset, and set value functions.
 
-
-
-
-
 ### Example :
 
 ```tsx
-	const { value, increment, decrement, reset, setValue } = useCounter(
-		args.initialValue
-	)
-	return (
-		<div className="flex items-center gap-4">
-			<Button onClick={() => reset()} className="w-20 font-bold">
-				Reset
-			</Button>
-			<Button onClick={() => decrement()} className="w-10 font-bold">
-				-1
-			</Button>
-			<p className="w-4 font-bold text-center">{value}</p>
-			<Button onClick={() => increment()} className="w-10 font-bold">
-				+1
-			</Button>
-			<Button onClick={() => setValue(73)} className="w-20 font-bold">
-				Set 73
-			</Button>
-		</div>
-	)
+const { value, increment, decrement, reset, setValue } = useCounter(
+	args.initialValue,
+)
+return (
+	<div className="flex items-center gap-4">
+		<Button onClick={() => reset()} className="w-20 font-bold">
+			Reset
+		</Button>
+		<Button onClick={() => decrement()} className="w-10 font-bold">
+			-1
+		</Button>
+		<p className="w-4 font-bold text-center">{value}</p>
+		<Button onClick={() => increment()} className="w-10 font-bold">
+			+1
+		</Button>
+		<Button onClick={() => setValue(73)} className="w-20 font-bold">
+			Set 73
+		</Button>
+	</div>
+)
 ```
 
-## Also you can set Attr "hasNegatives" to true to allow negative values. 
+## Also you can set Attr "hasNegatives" to true to allow negative values.
 
 ```tsx
-	const { value, increment, decrement, reset, setValue } = useCounter(
-		args.initialValue,
-		true
-	)
-	return (
-		<div className="flex items-center gap-4">
-			<Button onClick={() => reset()} className="w-20 font-bold">
-				Reset
-			</Button>
-			<Button onClick={() => decrement()} className="w-10 font-bold">
-				-1
-			</Button>
-			<p className="w-4 font-bold text-center">{value}</p>
-			<Button onClick={() => increment()} className="w-10 font-bold">
-				+1
-			</Button>
-			<Button onClick={() => setValue(73)} className="w-20 font-bold">
-				Set 73
-			</Button>
-		</div>
-	)
+const { value, increment, decrement, reset, setValue } = useCounter(
+	args.initialValue,
+	true,
+)
+return (
+	<div className="flex items-center gap-4">
+		<Button onClick={() => reset()} className="w-20 font-bold">
+			Reset
+		</Button>
+		<Button onClick={() => decrement()} className="w-10 font-bold">
+			-1
+		</Button>
+		<p className="w-4 font-bold text-center">{value}</p>
+		<Button onClick={() => increment()} className="w-10 font-bold">
+			+1
+		</Button>
+		<Button onClick={() => setValue(73)} className="w-20 font-bold">
+			Set 73
+		</Button>
+	</div>
+)
 ```
 
-
-
-<Canvas of={useCounter.Example} />
-## API 
+## API{' '}
 
 ▸ **useCounter** (`initialValue`, `hasNegatives`): `{ value: number, increment: function, decrement: function, reset: function, setValue: function }`
 
@@ -78,73 +71,12 @@ This hook allows you to create a counter with increment, decrement, reset, and s
 
 **Parameters:**
 
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> initialValue </td>
-<td> `number` </td>
-<td> The initial value of the counter. </td>
-</tr>
-<tr>
-<td> hasNegatives </td>
-<td> `boolean` </td>
-<td> If true, allows negative values. </td>
-</tr>
-</tbody>
-
-
-</table>
-
+<Table headers={parameters.headers} data={parameters.data} />
 
 **Returns:**
 
-<table>
+<Table headers={returns.headers} data={returns.data} />
 
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> value </td>
-<td> `number` </td>
-<td> The current value of the counter. </td>
-</tr>
-<tr>
-<td> increment </td>
-<td> `function` </td>
-<td> A function that increments the counter by 1. </td>
-</tr>
-<tr>
-<td> decrement </td>
-<td> `function` </td>
-<td> A function that decrements the counter by 1. </td>
-</tr>
-<tr>
-<td> reset </td>
-<td> `function` </td>
-<td> A function that resets the counter to its initial value. </td>
-</tr>
-<tr>
-<td> setValue </td>
-<td> `function` </td>
-<td> A function that sets the counter to a specified value. </td>
-</tr>
-</tbody>
+<Canvas of={useCounter.Example} />
 
-</table>
-
-
-<Controls/>
-
+<Controls />

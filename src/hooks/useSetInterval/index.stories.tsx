@@ -9,11 +9,9 @@ interface HookSampleProps {
 }
 
 const HookSample = (args: HookSampleProps) => {
-	const cicles = useSetInterval(args.miliseconds, args.callback)
+	const { cicles } = useSetInterval(args.miliseconds, args.callback)
 
-	return (
-			<Button className="font-bold">Cicles: {cicles}</Button>
-	)
+	return <Button className="font-bold">Cicles: {cicles}</Button>
 }
 
 const meta = {
@@ -22,7 +20,6 @@ const meta = {
 	parameters: {
 		layout: 'centered',
 	},
-
 } satisfies Meta<typeof HookSample>
 
 export default meta

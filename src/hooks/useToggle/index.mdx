@@ -1,12 +1,12 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useToggle  from './index.stories';
+import * as useToggle from './index.stories'
 
+import { returns } from './data'
+
+import Table from '@/components/Table'
 
 <Meta of={useToggle} />
-
-
-
 
 # useToggle
 
@@ -15,61 +15,20 @@ This hook is used to toggle between two states. It returns an object with the cu
 ### Example :
 
 ```tsx
-	const {toggle, handleToggle } = useToggle()
-	return <Button onClick={handleToggle}>{JSON.stringify(toggle)}</Button>
+const { toggle, handleToggle } = useToggle()
+return <Button onClick={handleToggle}>{JSON.stringify(toggle)}</Button>
 ```
-
-
-<Canvas of={useToggle.Example} />
-
 
 ## **API**
 
-▸ **useToggle**  (): `{toggle: boolean, handleToggle: function}`
+▸ **useToggle** (): `{toggle: boolean, handleToggle: function}`
 
 This hook is used to toggle between two states. It returns an object with the current state and a function to toggle the state.
 
-**Parameters:**
-
-None
-
-
-
 **Returns:**
 
+<Table headers={returns.headers} data={returns.data} />
 
-<table>
+<Canvas of={useToggle.Example} />
 
-<thead>
-
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-
-<tbody>
-<tr>
-
-<td> toggle </td>
-<td> `boolean` </td>
-<td> The current state of the toggle. </td>
-
-</tr>
-
-<tr>
-
-<td> handleToggle </td>
-<td> `function` </td>
-<td> The function to toggle the state. </td>
-
-</tr>
-</tbody>
-
-
-</table>
-
-<Controls/>
-
+<Controls />

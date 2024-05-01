@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react'
+import Docs from '../src/stories/gettingStarted.mdx'
 import '../styles.css'
+
 const preview: Preview = {
 	parameters: {
 		parameters: {

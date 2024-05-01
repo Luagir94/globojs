@@ -1,3 +1,6 @@
+name: Build and Publish Package to NPM
+
+
 on:
   push:
     branches: [ master ]

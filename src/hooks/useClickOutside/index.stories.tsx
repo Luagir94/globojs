@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import useClickOutside from '.'
-import { useRef, useState } from 'react'
-import Button from '@/components/Button'
+import React, { useRef, useState } from 'react'
+import Button from '@/components/Button';
 
 const HookSample = () => {
 	const ref = useRef<HTMLButtonElement>(null)

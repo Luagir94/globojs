@@ -1,13 +1,12 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useScreenSize  from './index.stories';
+import * as useScreenSize from './index.stories'
 
+import { returns } from './data'
+
+import Table from '@/components/Table'
 
 <Meta of={useScreenSize} />
-
-
-
-
 
 # useScreenSize
 
@@ -17,66 +16,25 @@ SSR compatible.
 ### Example :
 
 ```tsx
-    const { height, width} =useScreensize()
-	return (
-		<div className="flex flex-col items-center gap-4">
-            <p>
-                Height: {height}
-            </p>
-            <p>
-                Width: {width}
-            </p>
-		</div>
-	)
+const { height, width } = useScreensize()
+return (
+	<div className="flex flex-col items-center gap-4">
+		<p>Height: {height}</p>
+		<p>Width: {width}</p>
+	</div>
+)
 ```
-
-
-<Canvas of={useScreenSize.Example} />
-
 
 ## **API**
 
-▸ **useScreenSize**  (): `{height: number, width: number}`
+▸ **useScreenSize** (): `{height: number, width: number}`
 
 This hook is used to get the screen size of the window. It returns an object with the height and width of the screen.
 
-**Parameters:**
-
-None
-
-
-
 **Returns:**
 
+<Table headers={returns.headers} data={returns.data} />
 
-<table>
+<Canvas of={useScreenSize.Example} />
 
-<thead>
-
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-
-<tbody>
-<tr>
-<td> height </td>
-<td> `number` </td>
-<td> The height of the screen. </td>
-</tr>
-
-<tr>
-<td> width </td>
-<td> `number` </td>
-<td> The width of the screen. </td>
-</tr>
-</tbody>
-
-
-</table>
-
-
-<Controls/>
+<Controls />

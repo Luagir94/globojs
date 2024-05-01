@@ -1,34 +1,95 @@
-import { Meta } from "@storybook/blocks";
+import { Meta } from '@storybook/blocks'
+import Github from '../assets/github.svg'
+import Discord from '../assets/discord.svg'
+import Contact from '../assets/contact.svg'
 
+export const RightArrow = () => (
+	<svg
+		viewBox="0 0 14 14"
+		width="8px"
+		height="14px"
+		style={{
+			marginLeft: '4px',
+			display: 'inline-block',
+			shapeRendering: 'inherit',
+			verticalAlign: 'middle',
+			fill: 'currentColor',
+			'path fill': 'currentColor',
+		}}
+	>
+		<path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
+	</svg>
+)
 
-
-<Meta title="Introduction"  parameters={{ viewMode: 'docs' }} />
-
-
-
+<Meta title="Introduction" parameters={{ viewMode: 'docs' }} />
 
 # Welcome to
-<img src='imagotipos/imagotipo1.svg' />
+
+<img src="imagotipos/imagotipo1.svg" />
 
 Momentarily, this is a React Hooks library that provides a set of hooks to help you build your React applications. Opportunely this library
-can migrate to a full-fledged UI with ooks library in the future. It's a work in progress, and we are working hard to make it better every day.
-
+can migrate to a full-fledged UI with hooks library in the future. It's a work in progress, and we are working hard to make it better every day.
 
 ## Installation
 
 See the [Installation](/docs/installation--docs) guide to get started.
 
-
 ## Changelog
 
 See the [Changelog](/docs/changelog--docs) to see the latest changes.
 
-
-## Repository
-
-See the [Repository](https://github.com/Luagir94/globojs) to see the source code.
-
-
 ## The creator
 
 This library was created by [Luciano Giraudi](https://lucianogiraudi.com). He is a full-stack developer and loves to build things that help others.
+
+<section className=" mx-auto mb-12 max-w-7xl  ">
+
+## Contact
+
+    <article>
+
+    	<section className="flex gap-10">
+    		<article
+    			className="!text-3xl relative w-16 h-16 overflow-hidden transition duration-300 ease-in-out bg-center bg-no-repeat  bg-contain rounded-lg shadow-lg  hover:shadow-2xl"
+    			style={{ backgroundImage: `url(${Discord})` }}
+    		>
+    			<div className="absolute transition duration-300 ease-in-out bg-black bg-opacity-50 group-hover:opacity-75"></div>
+    			<a className="relative flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-4"
+                	href="https://discord.gg/UHmA2w6qb7"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+
+    			</a>
+    		</article>
+    		<article
+    			className="relative w-16 h-16 overflow-hidden transition duration-300 ease-in-out bg-center bg-no-repeat  bg-contain rounded-lg shadow-lg group hover:shadow-2xl"
+    			style={{ backgroundImage: `url(${Github})` }}
+    		>
+    			<div className="absolute transition duration-300 ease-in-out bg-black bg-opacity-50 group-hover:opacity-75"></div>
+    			<a
+    				className="relative flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-4"
+    				href="https://github.com/Luagir94/globojs"
+                        target="_blank"
+                    rel="noreferrer"
+    			>
+
+    			</a>
+    		</article>
+    		<article
+    			className="relative w-16 h-16 overflow-hidden transition duration-300 ease-in-out bg-center bg-no-repeat  bg-contain rounded-lg shadow-lg group hover:shadow-2xl"
+    			style={{ backgroundImage: `url(${Contact})` }}
+    		>
+    			<div className="absolute transition duration-300 ease-in-out bg-black bg-opacity-50 group-hover:opacity-75"></div>
+    			<a className="relative flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-4"
+                href="https://lucianogiraudi.com"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+
+    			</a>
+    		</article>
+    	</section>
+    </article>
+
+</section>

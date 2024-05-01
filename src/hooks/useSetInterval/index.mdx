@@ -1,12 +1,12 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useSetInterval  from './index.stories';
+import * as useSetInterval from './index.stories'
 
+import { returns, parameters } from './data'
+
+import Table from '@/components/Table'
 
 <Meta of={useSetInterval} />
-
-
-
 
 # useSetInterval
 
@@ -15,79 +15,25 @@ This hook allows you to set an interval and get the number of cicles that have p
 ### Example :
 
 ```tsx
-	const cicles = useSetInterval(args.miliseconds, args.callback)
+const cicles = useSetInterval(args.miliseconds, args.callback)
 
-	return (
-			<Button className="font-bold">Cicles: {cicles}</Button>
-	)
+return <Button className="font-bold">Cicles: {cicles}</Button>
 ```
-
-
-<Canvas of={useSetInterval.Example} />
 
 ## **API**
 
-▸ **useSetInterval**  (`miliseconds`, `callback`): *number*
+▸ **useSetInterval** (`miliseconds`, `callback`): _number_
 
 This hook allows you to set an interval and get the number of cicles that have passed.
 
 **Parameters:**
 
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td> miliseconds </td>
-<td> `number` </td>
-<td> The time in miliseconds that the interval will last. </td>
-</tr>
-<tr>
-<td> callback </td>
-<td> `function` </td>
-<td> The function that will be called every interval. </td>
-</tr>
-
-</tbody>
-
-</table>
-
-
+<Table headers={parameters.headers} data={parameters.data} />
 
 **Returns:**
 
+<Table headers={returns.headers} data={returns.data} />
 
-<table>
+<Canvas of={useSetInterval.Example} />
 
-<thead>
-
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-
-<tbody>
-<tr>
-<td> default </td>
-<td> `number` </td>
-<td>  
-The number of cicles that have passed.
-</td>
-</tr>
-</tbody>
-
-
-</table>
-
-
-<Controls/>
+<Controls />

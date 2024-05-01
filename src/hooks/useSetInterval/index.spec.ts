@@ -1,9 +1,12 @@
-import { renderHook, act } from '@testing-library/react'
+import { renderHook } from '@testing-library/react'
 import useSetInterval from './index'
+import { act } from 'react'
 
 describe('useSetInterval', () => {
 	beforeEach(() => {
-		jest.useFakeTimers()
+		jest.useFakeTimers({
+			legacyFakeTimers: true,
+		})
 	})
 
 	afterEach(() => {
@@ -15,20 +18,20 @@ describe('useSetInterval', () => {
 		const callback = jest.fn()
 		const { result } = renderHook(() => useSetInterval(1000, callback))
 
-		expect(result.current).toBe(0)
+		expect(result.current.cicles).toBe(0)
 
 		act(() => {
 			jest.advanceTimersByTime(1000)
 		})
 
-		expect(result.current).toBe(1)
+		expect(result.current.cicles).toBe(1)
 		expect(callback).toHaveBeenCalledTimes(1)
 
 		act(() => {
 			jest.advanceTimersByTime(1000)
 		})
 
-		expect(result.current).toBe(2)
+		expect(result.current.cicles).toBe(2)
 		expect(callback).toHaveBeenCalledTimes(2)
 	})
 
@@ -56,5 +59,20 @@ describe('useSetInterval', () => {
 		unmount()
 
 		expect(clearIntervalSpy).toHaveBeenCalledTimes(2)
+	})
+
+	test('should clear interval on clear call', () => {
+		const clearIntervalSpy = jest.spyOn(global, 'clearInterval')
+
+		const callback = jest.fn()
+		const { result } = renderHook(() => useSetInterval(1000, callback))
+
+		expect(clearIntervalSpy).not.toHaveBeenCalled()
+
+		act(() => {
+			result.current.clear()
+		})
+
+		expect(clearIntervalSpy).toHaveBeenCalledTimes(1)
 	})
 })

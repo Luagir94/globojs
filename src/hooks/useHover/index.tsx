@@ -1,5 +1,11 @@
 import { useEffect, useState, RefObject } from 'react'
 
+/**
+ * Custom hook that tracks whether an element is being hovered over.
+ * 
+ * @param ref - The ref object that points to the element to track.
+ * @returns A boolean value indicating whether the element is being hovered over.
+ */
 const useHover = (ref: RefObject<HTMLElement>) => {
 	const [isHovered, setIsHovered] = useState(false)
 

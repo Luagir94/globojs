@@ -1,12 +1,12 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useHover  from './index.stories';
+import * as useHover from './index.stories'
 
+import { returns, parameters } from './data'
+
+import Table from '@/components/Table'
 
 <Meta of={useHover} />
-
-
-
 
 # useHover
 
@@ -15,74 +15,29 @@ This hook allows you to detect when the mouse is hovering over an element.
 ### Example :
 
 ```tsx
-	const ref = useRef<HTMLButtonElement>(null)
-	const isHovered = useHover(ref)
-	return (
-		<Button ref={ref} className="w-40 font-bold">
-			{isHovered ? "It's hovered🎈" : 'Hover!'}
-		</Button>
-	)
+const ref = useRef<HTMLButtonElement>(null)
+const isHovered = useHover(ref)
+return (
+	<Button ref={ref} className="w-40 font-bold">
+		{isHovered ? "It's hovered🎈" : 'Hover!'}
+	</Button>
+)
 ```
-
-
-<Canvas of={useHover.Example} />
-
 
 ## **API**
 
-▸ **useHover** (`ref`): *boolean*
+▸ **useHover** (`ref`): _boolean_
 
 This hook allows you to detect when the mouse is hovering over an element.
 
 **Parameters:**
 
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td> ref </td>
-<td> `React.MutableRefObject<HTMLElement>` </td>
-<td> The reference to the element you want to detect hover on. </td>
-</tr>
-</tbody>
-
-</table>
-
-
+<Table headers={parameters.headers} data={parameters.data} />
 
 **Returns:**
 
+<Table headers={returns.headers} data={returns.data} />
 
-<table>
+<Canvas of={useHover.Example} />
 
-<thead>
-
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-
-
-<tbody>
-<tr>
-<td> default </td>
-<td> `boolean` </td>
-<td> A boolean that is true when the mouse is hovering over the element. </td>
-</tr>
-</tbody>
-
-
-</table>
-
-
-<Controls/>
+<Controls />

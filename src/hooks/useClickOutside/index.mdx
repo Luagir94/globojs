@@ -1,96 +1,45 @@
-import { Canvas, Meta, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Controls } from '@storybook/blocks'
 
-import * as  useClickOutside  from './index.stories';
+import * as useClickOutside from './index.stories'
 
+import { parameters } from './data'
+import Table from '@/components/Table';
 
 <Meta of={useClickOutside} />
-
-
-
 
 # **useClickOutside**
 
 This hook allows you to detect clicks outside of a specified element.
 
-
-
-
 ## **Example** :
 
 ```tsx
-	const ref = useRef<HTMLButtonElement>(null)
-	const [clicksOutside, setClicksOutside] = useState(0)
-	const callback = () => {
-		setClicksOutside(prev => prev + 1)
-	}
-	const hook = useClickOutside(ref, callback)
-	return (
-		<>
-			<Button ref={ref} className="font-bold">
-				Click outside!
-			</Button>
+const ref = useRef<HTMLButtonElement>(null)
+const [clicksOutside, setClicksOutside] = useState(0)
+const callback = () => {
+	setClicksOutside(prev => prev + 1)
+}
+const hook = useClickOutside(ref, callback)
+return (
+	<>
+		<Button ref={ref} className="font-bold">
+			Click outside!
+		</Button>
 
-			<p>Clicks outside: {clicksOutside}</p>
-		</>
-	)
+		<p>Clicks outside: {clicksOutside}</p>
+	</>
+)
 ```
 
-
-
-<Canvas of={useClickOutside.Example} preview/>
 ## **API**
 
- ▸ **useClickOutside**(`ref`, `callback`): *void*
-
+▸ **useClickOutside**(`ref`, `callback`): _void_
 
 This hook allows you to detect clicks outside of a specified element.
 
-**Parameters:**	
+**Parameters:**
+
+<Table headers={parameters.headers} data={parameters.data} />
 
 
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> ref </td>
-<td> `React.MutableRefObject<HTMLElement>` </td>
-<td> The reference to the element you want to detect clicks outside of. </td>
-</tr>
-<tr>
-<td> callback </td>
-<td> `() => void` </td>
-<td> The function that will be called when a click outside of the element is detected. </td>
-</tr>
-</tbody>
-</table>
-
-**Returns:** 
-
-<table>
-
-<thead>
-<tr>
-<th> Name </th>
-<th> Type </th>
-<th> Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> void </td>
-<td> `void` </td>
-<td> Doesn't returns anything  </td>
-</tr>
-</tbody>
-
-</table>
-<Controls/>
-
-
+<Canvas of={useClickOutside.Example} preview />

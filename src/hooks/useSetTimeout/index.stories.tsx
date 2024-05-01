@@ -8,7 +8,7 @@ interface HookSampleProps {
 }
 
 const HookSample = (args: HookSampleProps) => {
-	const isDone = useSetTimeout(args.miliseconds, args.callback)
+	const { isDone } = useSetTimeout(args.miliseconds, args.callback)
 	return <Button>{isDone ? 'Done' : 'Not done'}</Button>
 }
 
