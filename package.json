@@ -42,7 +42,8 @@
     "clean": "rimraf dist/",
     "clean:docs": "rimraf storybook-static/",
     "push:npm": "np",
-    "prepare": "husky"
+    "prepare": "husky",
+    "semantic-release": "semantic-release --branches master"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.0.9",
