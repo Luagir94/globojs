@@ -1,0 +1,33 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+# useLoad
+
+This hook simplifies the use of an hook all of us use.
+
+### Example :
+
+```tsx
+    import useLoad from 'globojs'
+
+    const [load, toggleLoad] = useLoad(false) <- init the hook with false value 
+    function getData(){
+        toggleLoad() <- this function will toggle the load state (be careful with this hook it is an async because use useState)
+        fetch('/example',{
+            method: "GET"
+        }).then(res =>{
+            ... logic of your code
+        }).catch(err =>{
+            ... logic for your error
+        }).finally(... your logic for finally code and toggleLoad() <- for switch again your state)
+    }
+    
+
+	return (
+		<div className="flex flex-col items-center gap-4">
+            <button onClick={getData}>Get users</button>
+		</div>
+	)
+```
+
+
+<Controls/>
