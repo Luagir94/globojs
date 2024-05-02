@@ -4,7 +4,7 @@ export default create({
 	base: 'light',
 	brandTitle: 'Globo Js',
 	brandUrl: 'https://luagir94.github.io/globojs/',
-	brandImage: 'imagotipos/imagotipo1.svg',
+	brandImage: 'assets/imagotipos/imagotipo1.svg',
 	brandTarget: '_self',
 	//Theme colors
 	colorPrimary: '#B90504',
