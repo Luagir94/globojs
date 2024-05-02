@@ -1,9 +1,14 @@
 # CHANGELOG
 
-## 1.2.0
+## 1.3.0
 
 ### Features
 
+- 🎉 Added Hook `useFirstRender`.
+
+## 1.2.0
+
+### Features
 
 - 🎉 Added `clear` function to `useSetInterval` & `useSetTimeout`.
 
@@ -12,7 +17,6 @@
 ## 1.1.0
 
 ### Features
-
 
 - 🎉 Added Hooks `useToggle` & `useCreen`.
 
