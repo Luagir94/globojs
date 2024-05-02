@@ -105,8 +105,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {
-    "@storybook/addon-viewport": "^8.0.9"
   }
 }
