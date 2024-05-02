@@ -4,8 +4,6 @@ name: Build and Publish Package to NPM
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: ['*']
 
 jobs:
   quality:
