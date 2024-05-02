@@ -1,0 +1,1 @@
+import{r as a}from"./index-uubelm5h.js";const s=(r=0,c=!1)=>{const[n,t]=a.useState(r);return{value:n,increment:(e=1)=>{t(o=>o+e)},decrement:(e=1)=>{!c&&n-e<0||t(o=>o-e)},reset:()=>{t(r)},setValue:e=>{t(e)}}};try{s.displayName="useCounter",s.__docgenInfo={description:"Custom hook for managing a counter.",displayName:"useCounter",props:{}}}catch{}export{s as u};
