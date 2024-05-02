@@ -3,7 +3,7 @@
 
 # GloboJS
 
-![globojslogo](./public/imagotipos/imagotipo1bg.png)
+![globojslogo](./public/assets/imagotipos/imagotipo1bg.png)
 
 Momentarily, this is a React Hooks library that provides a set of hooks to help you build your React applications. Opportunely this library
 can migrate to a full-fledged UI with hooks library in the future. It's a work in progress, and we are working hard to make it better every day.
