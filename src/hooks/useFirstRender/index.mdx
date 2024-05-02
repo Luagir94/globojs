@@ -1,0 +1,40 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks'
+
+import * as useFirstRender from './index.stories'
+
+import { returns } from './data'
+import Table from '@/components/Table'
+
+<Meta of={useFirstRender} />
+
+# useFirstRender
+
+This hook is used to check if the component is rendered for the first time or not.
+
+### Example :
+
+```tsx
+const { value, increment } = useCounter(0)
+const isFirstRender = useFirstRender()
+
+return (
+	<div className="flex flex-col items-center gap-4">
+		<Button onClick={() => increment()}>Rerender</Button>
+
+		<p>Number of renders {value}</p>
+		<p>Is first render: {isFirstRender ? 'true' : 'false'}</p>
+	</div>
+)
+```
+
+## **API**
+
+▸ **useFirstRender** () : _`boolean`_
+
+This hook is used to check if the component is rendered for the first time or not.
+
+**Returns:**
+
+<Table headers={returns.headers} data={returns.data} />
+
+<Canvas of={useFirstRender.Example} />

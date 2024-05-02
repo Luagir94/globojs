@@ -56,7 +56,7 @@ const useCounter = (initialValue = 0, hasNegatives = false) => {
 		decrement,
 		reset,
 		setValue,
-	}
+	} 
 }
 
 export default useCounter
